@@ -32,8 +32,6 @@ export default function App() {
     initialData: {
       notes: [],
       totalPages: 0,
-      page: 1,
-      perPage,
     },
   });
 
@@ -46,7 +44,12 @@ export default function App() {
   return (
     <div className={css.app}>
       <header className={css.toolbar}>
-        <SearchBox value={search} onChange={setSearch} />
+        <SearchBox value={search} onChange={(value) => {
+    setSearch(value);
+    setPage(1);
+  }}
+/>
+
 
         {totalPages > 1 && (
           <Pagination

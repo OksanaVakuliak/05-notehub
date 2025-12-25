@@ -4,8 +4,6 @@ import type { Note, CreateNote } from '../types/note';
 export interface FetchNotesResponse {
   notes: Note[];
   totalPages: number;
-  page: number;
-  perPage: number;
 }
 
 const API_URL = 'https://notehub-public.goit.study/api/notes';
